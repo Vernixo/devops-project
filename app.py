@@ -19,6 +19,11 @@ def home():
         elif operation == 'multiply':
             result = num1 * num2
             operation_symbol = '*'
+        elif operation == 'divide':
+            if num2 == 0:
+                return "<h1>Nie można dzielić przez zero!</h1><a href='/'>Powrót</a>"
+            result = num1 / num2
+            operation_symbol = '/'
 
         return f"""
             <h1>Wynik operacji: {num1} {operation_symbol} {num2} = {result}</h1>
@@ -38,6 +43,7 @@ def home():
                 <option value="add">Dodawanie</option>
                 <option value="subtract">Odejmowanie</option>
                 <option value="multiply">Mnożenie</option>
+                <option value="divide">Dzielenie</option>
             </select>
             <br><br>
             <button type="submit">Oblicz</button>
