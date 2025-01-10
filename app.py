@@ -16,12 +16,15 @@ def home():
         elif operation == 'subtract':
             result = num1 - num2
             operation_symbol = '-'
+        elif operation == 'multiply':
+            result = num1 * num2
+            operation_symbol = '*'
 
         return f"""
             <h1>Wynik operacji: {num1} {operation_symbol} {num2} = {result}</h1>
             <a href="/">Powrót</a>
         """
-    
+
     return """
         <form method="POST">
             <label for="num1">Liczba 1:</label>
@@ -34,6 +37,7 @@ def home():
             <select id="operation" name="operation">
                 <option value="add">Dodawanie</option>
                 <option value="subtract">Odejmowanie</option>
+                <option value="multiply">Mnożenie</option>
             </select>
             <br><br>
             <button type="submit">Oblicz</button>
